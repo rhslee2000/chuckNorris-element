@@ -1,5 +1,5 @@
 {
-  "name": "angular-elements",
+  "name": "hello-world-elements",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:elements": "ng build --prod --output-hashing none && node elements-build.js"
   },
   "private": true,
   "dependencies": {
@@ -15,13 +16,18 @@
     "@angular/common": "^6.0.2",
     "@angular/compiler": "^6.0.2",
     "@angular/core": "^6.0.2",
+    "@angular/elements": "^6.0.2",
     "@angular/forms": "^6.0.2",
     "@angular/http": "^6.0.2",
     "@angular/platform-browser": "^6.0.2",
     "@angular/platform-browser-dynamic": "^6.0.2",
     "@angular/router": "^6.0.2",
+    "concat": "^1.0.3",
     "core-js": "^2.5.4",
+    "document-register-element": "^1.7.2",
+    "fs-extra": "^6.0.1",
     "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.1.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

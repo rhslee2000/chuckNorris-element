@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angularElements": {
+    "helloElements": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angularElements",
+            "outputPath": "dist/helloElements",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,7 +25,11 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -50,18 +54,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angularElements:build"
+            "browserTarget": "helloElements:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angularElements:build:production"
+              "browserTarget": "helloElements:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angularElements:build"
+            "browserTarget": "helloElements:build"
           }
         },
         "test": {
@@ -95,7 +99,7 @@
         }
       }
     },
-    "angularElements-e2e": {
+    "helloElements-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,7 +107,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angularElements:serve"
+            "devServerTarget": "helloElements:serve"
           }
         },
         "lint": {
@@ -118,5 +122,5 @@
       }
     }
   },
-  "defaultProject": "angularElements"
+  "defaultProject": "helloElements"
 }
