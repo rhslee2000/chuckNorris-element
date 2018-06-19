@@ -1,21 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 import { NgModule, Injector } from '@angular/core';
 
 import { createCustomElement } from '@angular/elements';
 
-import { HelloWorldComponent } from './hello-world/hello-world.component';
+import { ChuckNorrisComponent } from './chuck-norris/chuck-norris.component';
+import { ChuckNorrisService } from './chuck-norris/chuck-norris.service';
 
 @NgModule({
   declarations: [
-    HelloWorldComponent
+    ChuckNorrisComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   entryComponents: [
-	  HelloWorldComponent
+	  ChuckNorrisComponent
   ],
-  providers: []
+  providers: [ ChuckNorrisService ],
+  bootstrap: [ChuckNorrisComponent]
 })
 export class AppModule {
 
@@ -24,9 +29,9 @@ export class AppModule {
 	}
 
 	ngDoBootstrap() {
-		const el = createCustomElement(HelloWorldComponent, {
+		const el = createCustomElement(ChuckNorrisComponent, {
 			injector: this.injector
 		});
-		customElements.define('hello-world', el);
+		customElements.define('chuck-norris', el);
 	}
  }
