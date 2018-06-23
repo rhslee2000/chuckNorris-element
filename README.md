@@ -1,4 +1,4 @@
-# HelloWorldElements
+# ChuckNorrisElements
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
 
@@ -21,6 +21,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Package element
+
+Run `npm run build:elements` to create single js file under elements folder for deployment to Angular and non Angular app.  
 
 ## Further help
 
